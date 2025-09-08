@@ -1,0 +1,237 @@
+// ==========================================================================
+// 変数・ミックスイン読み込み
+// ==========================================================================
+@use "variables" as *;
+@use "mixin" as *;
+
+// ==========================================================================
+// ヘッダー
+// ==========================================================================
+
+// ================================
+// 320px~900px~ スマホ・タブレット
+// ================================
+.header {
+  width: 100vw;
+  height: clamp(80px, 25vw, 100px);
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__wrapper {
+    height: 100%;
+    width: 89.5%;
+    margin: 0 auto;
+    @include flex__row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // ロゴ
+  &__logo {
+    @include logo__style;
+  }
+
+  // =========================
+  // ハンバーガーメニュー
+  // =========================
+
+  // ハンバーガーボタン
+  .hamburger__button {
+    width: clamp(40px, 12vw, 56px);
+    height: clamp(80px, 25vw, 100px);
+    @include flex__row;
+    align-items: center;
+    position: fixed;
+    right: 5.25vw;
+    top: 0;
+    z-index: 2;
+
+    &Wrapper {
+      width: 100%;
+      height: clamp(40px, 12vw, 56px);
+      background: linear-gradient(
+        135deg,
+        rgba(0, 177, 107, 1),
+        rgba(70, 177, 0, 1)
+      );
+      position: relative;
+      border-radius: 15%;
+
+      span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        background: #fff;
+        width: 70%;
+        height: 2px;
+
+        // 1本目の線
+        &:first-of-type {
+          top: 12px;
+        }
+
+        // 2本目の線
+        &:nth-of-type(2) {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        // 3本目の線
+        &:nth-of-type(3) {
+          bottom: 12px;
+        }
+      }
+
+      span {
+        width: 60%;
+        right: 22%;
+        left: auto;
+
+        // 1本目の線
+        &:first-of-type {
+          transform:  rotate(45deg);
+          top: 50%;
+        }
+
+        // 2本目の線
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        // 3本目の線
+        &:nth-of-type(3) {
+          transform: rotate(-45deg);
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  // メニュー
+  .hamburger__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(89.5vw, 560px);
+    height: 100vh;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 177, 107, 1),
+      rgba(70, 177, 0, 1)
+    );
+
+    // ロゴ
+    .hamburger__logo {
+      @include logo__style;
+      height: clamp(80px, 25vw, 100px);
+      width: 89.5%;
+      @include flex__row;
+      align-items: center;
+      margin: 0 auto clamp(32px, 10vw, 80px);
+    }
+
+    // グループ情報
+    .groupInformation {
+      @include flex__column;
+      width: 89.5%;
+      margin: 0 auto;
+      row-gap: clamp(18px, 5.6vw, 24px);
+
+      // 団体名
+      .groupnformationItem:nth-of-type(1) {
+        color: #fff;
+        @include flex__column;
+        row-gap: clamp(6px, 2vw, 12px);
+        @include heading__font;
+        font-family: "Shippori Mincho", serif;
+
+        .groupActivities {
+          font-size: clamp(12px, 3.75vw, 14px);
+          font-weight: 400;
+        }
+
+        .groupName {
+          font-size: clamp(2.2rem, 7vw, 2.8rem);
+          font-weight: 500;
+        }
+      }
+
+      .groupnformationItem a {
+        color: #fff;
+        font-size: clamp(15px, 4.5vw, 18px);
+        font-weight: 400;
+        @include flex__row;
+        align-items: center;
+        column-gap: clamp(6px, 2vw, 12px);
+
+        .icon {
+          width: clamp(18px, 5.6vw, 24px);
+        }
+      }
+
+      // 電話番号
+      .groupnformationItem:nth-of-type(2) a {
+        .icon {
+          transform: rotate(30deg);
+        }
+      }
+    }
+  }
+
+  // ナビゲーション
+  &__nav {
+    @include flex__column;
+    align-items: center;
+    margin-bottom: clamp(32px, 10vw, 56px);
+  }
+
+  &__navList {
+    height: auto;
+    width: 89.5%;
+    margin: 0 auto;
+    @include flex__column;
+    row-gap: clamp(1.6px, 5vw, 24px);
+  }
+
+  &__navItem {
+    @include heading__font;
+    font-size: clamp(1.5rem, 4.7vw, 2rem);
+    font-weight: 500;
+
+    a {
+      color: #fff;
+      padding-bottom: clamp(1.6px, 5vw, 24px);
+      box-sizing: border-box;
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+    }
+
+    .icon {
+      display: none;
+    }
+  }
+}
+
+// ================================
+// 900px~ PC
+// ================================
+@include mq(l) {
+  .header {
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+    }
+
+    &__navList {
+      @include flex__row;
+      align-items: center;
+    }
+  }
+}

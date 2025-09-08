@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO / OGP -->
+    <meta name="description" content="自然と動物を守る環境保護団体『いのちの和』。人と自然が共に生きる未来を目指し、清掃活動や自然観察会を行っています。">
+
+    <meta property="og:title" content="自然・動物保護団体 いのちの和">
+    <meta property="og:description" content="自然と動物を守る環境保護団体『いのちの和』。人と自然が共に生きる未来を目指し、清掃活動や自然観察会を行っています。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matsuyamarikiya.jp/Bond_of_Life/index.html">
+    <meta property="og:site_name" content="自然・動物保護団体 いのちの和">
+
+    <title>自然・動物保護団体 いのちの和</title>
+
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts 読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Shippori+Mincho&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__wrapper">
+            <h1 class="header__logo">いのちの和</h1>
+
+
+            <!-- ハンバーガーボタン -->
+            <div class="hamburger__button">
+                <div class="hamburger__buttonWrapper">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="hamburger__menu">
+
+                <!-- ハンバーガーメニュー ロゴ -->
+                <div class="hamburger__logo">いのちの和</div>
+
+                <nav class="header__nav">
+                    <ul class="header__navList">
+                        <li class="header__navItem"><a href="index.html">トップ</a></li>
+                        <li class="header__navItem"><a href="news.html">お知らせ</a></li>
+                        <li class="header__navItem"><a href="initiative.html">活動紹介</a></li>
+
+                        <!-- ナビゲーション お問い合わせボタン -->
+                        <li class="header__navItem"><a href="contact.html">
+                                <span class="contact__button">
+                                    <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
+                                    <span class="button__text">お問い合わせ</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- 団体情報 -->
+                <ul class="groupInformation">
+                    <li class="groupnformationItem">
+                        <span class="groupActivities">自然・動物保護団体</span>
+                        <span class="groupName">いのちの和</span>
+                    </li>
+                    <li class="groupnformationItem">
+                        <a href="">
+                            <span class="icon"><img src="img/common/phone-icon.png" alt=""></span>
+                            <span class="text">000-0000-0000</span>
+                        </a>
+                    </li>
+                    <li class="groupnformationItem">
+                        <a href="">
+                            <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
+                            <span class="text">marujljaaa.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="mainvisual">
+
+        <!-- 画像 -->
+        <div class="mainvisual__img">
+            <picture>
+                <!-- 1080px以上の画面サイズ用 -->
+                <source media="(min-width: 900px)" srcset="img/top/mv.jpg">
+
+                <!-- 320px〜1079pxの画面サイズ用 -->
+                <source media="(max-width: 900px)" srcset="img/top/mv__sp.jpg">
+
+                <img src="img/top/mv__sp.jpg" alt="壮大な草原">
+            </picture>
+        </div>
+
+        <!-- キャッチコピー -->
+        <div class="copy__wrapper">
+            <h2 class="main__copy">自然の声に、<br>私たちは応える。</h2>
+            <h3 class="sub__copy">
+                森のざわめきも、海のささやきも、<br>
+                すべては私たちへの問いかけです。<br>
+                その声を無視せず、<br>
+                未来へとつなぐ行動に変えていきます。</h3>
+        </div>
+    </section>
+</body>
+
+</html>
