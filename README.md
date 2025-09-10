@@ -4,11 +4,13 @@
 
 ## 使用技術
 
-・HTML <br>
-・Scss <br>
-・JavaScript <br>
-・WordPress <br>
+・HTML
+・Scss
+・JavaScript
+・WordPress 
 
 ## ルール
 
 ・クラス名には BEN 記法を採用
+・HTML/Scss/JavaScriptすべて、コメントアウトを使用する。
+  HTMLではセクションごと、Scssはでのセクションのスタイルなど。
