@@ -11,7 +11,7 @@
     <meta property="og:title" content="自然・動物保護団体 いのちの和">
     <meta property="og:description" content="自然と動物を守る環境保護団体『いのちの和』。人と自然が共に生きる未来を目指し、清掃活動や自然観察会を行っています。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://matsuyamarikiya.jp/Bond_of_Life/index.html">
+    <meta property="og:url" content="https://matsuyamarikiya.jp/bond_of_life/index.html">
     <meta property="og:site_name" content="自然・動物保護団体 いのちの和">
 
     <title>自然・動物保護団体 いのちの和</title>
@@ -32,13 +32,13 @@
 <body>
 
     <!-- ヘッダー -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__wrapper">
-            <h1 class="header__logo">いのちの和</h1>
+            <h1 class="header__logo"><a href="index.html">いのちの和</a></h1>
 
 
             <!-- ハンバーガーボタン -->
-            <div class="hamburger__button">
+            <div class="hamburger__button" id="hamburger__button">
                 <div class="hamburger__buttonWrapper">
                     <span></span>
                     <span></span>
@@ -46,62 +46,67 @@
                 </div>
             </div>
 
-            <div class="hamburger__menu">
+            <div class="hamburger__menu" id="hamburger__menu">
+                <div class="hamburger__menuWrapper">
 
-                <!-- ハンバーガーメニュー ロゴ -->
-                <div class="hamburger__logo">いのちの和</div>
+                    <!-- ハンバーガーメニュー ロゴ -->
+                    <div class="hamburger__logo">いのちの和</div>
 
-                <nav class="header__nav">
-                    <ul class="header__navList">
-                        <li class="header__navItem"><a href="index.html">トップ</a></li>
-                        <li class="header__navItem"><a href="news.html">お知らせ</a></li>
-                        <li class="header__navItem"><a href="initiative.html">活動紹介</a></li>
+                    <nav class="header__nav">
+                        <ul class="header__navList">
+                            <li class="header__navItem"><a href="index.html">トップ</a></li>
+                            <li class="header__navItem"><a href="news.html">お知らせ</a></li>
+                            <li class="header__navItem"><a href="initiative.html">私たちの取り組み</a></li>
 
-                        <!-- ナビゲーション お問い合わせボタン -->
-                        <li class="header__navItem"><a href="contact.html">
-                                <span class="contact__button">
-                                    <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
-                                    <span class="button__text">お問い合わせ</span>
-                                </span>
+                            <!-- ナビゲーション お問い合わせボタン -->
+                            <li class="header__navItem"><a href="contact.html">
+                                        <span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                                <path
+                                                    d="M 0 7 L 0 9.875 L 25 29.71875 L 50 10.125 L 50 7 Z M 0 12.40625 L 0 43 L 50 43 L 50 12.65625 L 25.625 31.78125 C 25.445313 31.921875 25.21875 32 25 32 C 24.78125 32 24.558594 31.925781 24.375 31.78125 Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="button__text">お問い合わせ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- 団体情報 -->
+                    <ul class="groupInformation">
+                        <li class="groupnformationItem">
+                            <span class="groupActivities">自然・動物保護団体</span>
+                            <span class="groupName">いのちの和</span>
+                        </li>
+                        <li class="groupnformationItem">
+                            <a href="">
+                                <span class="icon"><img src="img/common/phone-icon.png" alt=""></span>
+                                <span class="text">000-0000-0000</span>
+                            </a>
+                        </li>
+                        <li class="groupnformationItem">
+                            <a href="">
+                                <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
+                                <span class="text">marujljaaa.com</span>
                             </a>
                         </li>
                     </ul>
-                </nav>
-
-                <!-- 団体情報 -->
-                <ul class="groupInformation">
-                    <li class="groupnformationItem">
-                        <span class="groupActivities">自然・動物保護団体</span>
-                        <span class="groupName">いのちの和</span>
-                    </li>
-                    <li class="groupnformationItem">
-                        <a href="">
-                            <span class="icon"><img src="img/common/phone-icon.png" alt=""></span>
-                            <span class="text">000-0000-0000</span>
-                        </a>
-                    </li>
-                    <li class="groupnformationItem">
-                        <a href="">
-                            <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
-                            <span class="text">marujljaaa.com</span>
-                        </a>
-                    </li>
-                </ul>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- メインビジュアル -->
-    <section class="mainvisual">
+    <section class="mainvisual" id="fv">
 
         <!-- 画像 -->
         <div class="mainvisual__img">
             <picture>
-                <!-- 1080px以上の画面サイズ用 -->
+                <!-- 900px以上の画面サイズ用 -->
                 <source media="(min-width: 900px)" srcset="img/top/mv.jpg">
 
-                <!-- 320px〜1079pxの画面サイズ用 -->
-                <source media="(max-width: 900px)" srcset="img/top/mv__sp.jpg">
+                <!-- 320px〜899pxの画面サイズ用 -->
+                <source media="(max-width: 899px)" srcset="img/top/mv__sp.jpg">
 
                 <img src="img/top/mv__sp.jpg" alt="壮大な草原">
             </picture>
@@ -109,14 +114,52 @@
 
         <!-- キャッチコピー -->
         <div class="copy__wrapper">
-            <h2 class="main__copy">自然の声に、<br>私たちは応える。</h2>
+            <h2 class="main__copy">自然と命を、<br>未来へつなぐ</h2>
             <h3 class="sub__copy">
-                森のざわめきも、海のささやきも、<br>
-                すべては私たちへの問いかけです。<br>
-                その声を無視せず、<br>
-                未来へとつなぐ行動に変えていきます。</h3>
+                私たちは山や森、川を守り、<br>
+                動物と人が共に生きる社会を目指しています。
+            </h3>
         </div>
     </section>
+
+    <!-- aboutセクション -->
+    <section class="about">
+
+        <div class="about__wrapper">
+            <div class="about__text">
+                <div class="about__headingWrapper">
+                    <h2 class="about__mainHeading">私たちについて</h2>
+                    <h3 class="about__subHeading">about</h3>
+                </div>
+                <p class="about__description">
+                    私たちは、生命を守り、未来へつなぐことを使命とする保護団体です。<br>
+                    山や森、川は人々の暮らしを支え、多くの命を育む大切な存在ですが、<br class="pc__br">
+                    環境汚染や開発によって失われつつあります。
+                </p>
+                <p class="about__description">
+                    その現状を変えるために、私たちは清掃活動を通じて自然本来の姿を取り戻し、<br class="pc__br">
+                    動物と人がふれあえる場を設けています。<br>
+                    命の温もりに触れる体験は、自然や動物を大切に思う心を育て、<br class="pc__br">
+                    次の行動へとつながります。
+                </p>
+                <p class="about__description">
+                    「自然と命が共に生きる社会」を目指し、<br class="pc__br">
+                    私たちは小さな一歩を積み重ね、未来へ希望を届けていきます。
+                </p>
+            </div>
+
+            <!-- 画像 -->
+            <div class="about__imgArea">
+                <div class="about__img"><img src="img/top/about1.jpg" alt=""></div>
+                <div class="about__img"><img src="img/top/about2.jpg" alt=""></div>
+                <div class="about__img"><img src="img/top/about3.jpg" alt=""></div>
+                <div class="about__img"><img src="img/top/about4.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- js読み込み -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

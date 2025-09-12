@@ -17,6 +17,13 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
+  transition: all 0.4s;
+
+  // ファーストビューを超えたら背景表示
+  &.active {
+    background: rgba($color: $main-color, $alpha: 0.3);
+  }
 
   &__wrapper {
     height: 100%;
@@ -29,7 +36,9 @@
 
   // ロゴ
   &__logo {
-    @include logo__style;
+    a {
+      @include logo__style;
+    }
   }
 
   // =========================
@@ -50,11 +59,7 @@
     &Wrapper {
       width: 100%;
       height: clamp(40px, 12vw, 56px);
-      background: linear-gradient(
-        135deg,
-        rgba(0, 177, 107, 1),
-        rgba(70, 177, 0, 1)
-      );
+      background: $gradient;
       position: relative;
       border-radius: 15%;
 
@@ -66,10 +71,11 @@
         background: #fff;
         width: 70%;
         height: 2px;
+        transition: all 0.4s;
 
         // 1本目の線
         &:first-of-type {
-          top: 12px;
+          top: 25%;
         }
 
         // 2本目の線
@@ -80,18 +86,21 @@
 
         // 3本目の線
         &:nth-of-type(3) {
-          bottom: 12px;
+          bottom: 25%;
         }
       }
+    }
 
+    // 開閉時
+    &.active {
       span {
         width: 60%;
-        right: 22%;
-        left: auto;
+        left: 50%;
+        transform-origin: center;
 
         // 1本目の線
         &:first-of-type {
-          transform:  rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
           top: 50%;
         }
 
@@ -102,7 +111,7 @@
 
         // 3本目の線
         &:nth-of-type(3) {
-          transform: rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
           top: 50%;
         }
       }
@@ -114,13 +123,63 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: min(89.5vw, 560px);
+    width: 100%;
     height: 100vh;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 177, 107, 1),
-      rgba(70, 177, 0, 1)
-    );
+    transition: all 0.4s;
+    opacity: 0;
+    visibility: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #00b16b, $alpha: 0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s;
+    }
+
+    &Wrapper {
+      margin-left: auto;
+      width: 89.5%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 177, 107, 1),
+        rgba(70, 177, 0, 1)
+      );
+      transform: translateX(100%);
+      transition: all 0.4s;
+    }
+
+    // 開閉時
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      // 背景の透過
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hamburger__menuWrapper {
+        margin-left: auto;
+        width: 89.5%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 177, 107, 1),
+          rgba(70, 177, 0, 1)
+        );
+        transform: translateX(0);
+      }
+    }
 
     // ロゴ
     .hamburger__logo {
@@ -144,7 +203,6 @@
         color: #fff;
         @include flex__column;
         row-gap: clamp(6px, 2vw, 12px);
-        @include heading__font;
         font-family: "Shippori Mincho", serif;
 
         .groupActivities {
@@ -196,7 +254,6 @@
   }
 
   &__navItem {
-    @include heading__font;
     font-size: clamp(1.5rem, 4.7vw, 2rem);
     font-weight: 500;
 
@@ -220,18 +277,118 @@
 // ================================
 @include mq(l) {
   .header {
+    // ハンバーガーボタン
+    .hamburger__button {
+      display: none;
+    }
+
+    // ハンバーガーメニュー非表示
+    .hamburger__menu {
+      width: auto;
+      height: 100%;
+      position: static;
+      opacity: 1;
+      visibility: visible;
+
+      &Wrapper {
+        background: transparent;
+        transform: translateX(0);
+        margin: 0;
+        width: auto;
+      }
+
+      // ロゴ
+      .hamburger__logo {
+        display: none;
+      }
+
+      // 団体情報
+      .groupInformation {
+        display: none;
+      }
+    }
+
     &__nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: transparent;
+      position: static;
+      width: auto;
+      height: auto;
+      margin-bottom: 0;
+      @include flex__row;
+      align-items: center;
+      height: 100%;
     }
 
     &__navList {
       @include flex__row;
       align-items: center;
+      column-gap: clamp(40px, 4vw, 56px);
+      margin: 0;
+      width: 100%;
+    }
+
+    &__navItem {
+      a {
+        font-size: clamp(11px, 1.2vw, 18px);
+        padding-bottom: 0;
+        border-bottom: 0;
+        margin-top: clamp(8px, 0.8vw, 12px);
+        padding-bottom: clamp(8px, 0.8vw, 12px);
+        box-sizing: border-box;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: $main-color;
+          position: absolute;
+          bottom: 0;
+          transform-origin: left;
+          transform: scale(0, 1);
+          transition: all 0.4s;
+        }
+
+        &:hover::before {
+          transform: scale(1, 1);
+        }
+      }
+
+      // お問い合わせボタン
+      &:last-of-type a {
+        padding: clamp(12px, 1.3vw, 16px) clamp(24px, 2.5vw, 32px);
+        box-sizing: border-box;
+        background: $main-color;
+        border-radius: 40px;
+        position: relative;
+        color: #fff;
+        overflow: hidden;
+        @include flex__row;
+        align-items: center;
+        column-gap: clamp(8px, 0.8vw, 12px);
+        margin-top: 0;
+        transition: all 0.4s;
+        border: 1px solid $main-color;
+
+        &::before {
+          display: none;
+        }
+
+        // ホバー時色変更
+        &:hover {
+          background: #fff;
+          color: #000;
+          border: 1px solid #000;
+        }
+
+        // アイコン
+        .icon {
+          display: block;
+          margin-top: clamp(1px, 0.1vw, 3px);
+          width: clamp(11px, 1.2vw, 20px);
+          fill: currentColor;
+        }
+      }
     }
   }
 }

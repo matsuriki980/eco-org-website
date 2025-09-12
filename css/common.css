@@ -9,13 +9,12 @@ html {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-feature-settings: "palt";
   /* 横スクロール禁止 */
   overflow-x: hidden;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Serif JP", serif;
   font-weight: 100;
   font-style: normal;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.3em;
 }
 
 body {
