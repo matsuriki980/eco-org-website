@@ -56,7 +56,7 @@ $breakpoints: (
 // コンテンツ幅
 // ==========================================================================
 @mixin wrapper {
-  width: 89.5vw;
+  width: 89.5%;
   margin: 0 auto;
 }
 
@@ -83,7 +83,7 @@ $breakpoints: (
 // 見出し設定
 // ==========================================================================
 @mixin headingWrapper__style {
-  margin-bottom: clamp(20px, 6.25vw, 48px);
+  margin-bottom: clamp(40px, 12.5vw, 64px);
 
   // ============================
   // 900px~ PC
@@ -102,7 +102,7 @@ $breakpoints: (
   // 900px~ PC
   // ============================
   @include mq(l) {
-    font-size: clamp(28px, 3vw, 36px);
+    font-size: clamp(28px, 2.5vw, 36px);
   }
 }
 
@@ -141,4 +141,64 @@ $breakpoints: (
 // ==========================================================================
 @mixin section__margin {
   margin-bottom: clamp(80px, 25vw, 150px);
+
+  // ============================
+  // 900px~ PC
+  // ============================
+  @include mq(l) {
+    margin-bottom: clamp(100px, 11vw, 160px);
+  }
+}
+
+// ==========================================================================
+// ボタンスタイル
+// ==========================================================================
+@mixin button__style {
+  padding: clamp(16px, 5vw, 24px) clamp(40px, 12.5vw, 80px)
+    clamp(16px, 5vw, 24px) clamp(32px, 10vw, 64px);
+  background: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 40px;
+  font-size: clamp(14px, 4.375vw, 22px);
+  font-weight: 500;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s;
+
+  // 矢印
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 2.8%;
+    height: 13%;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    top: 52%;
+    right: 12%;
+    transform: translateY(-50%) rotate(-135deg);
+    transition: all 0.4s;
+  }
+
+  // ホバー時の動き
+  &:hover {
+    background: #fff;
+    border: 1px solid #000;
+    color: inherit;
+
+    &::after {
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  // ============================
+  // 900px~ PC
+  // ============================
+  @include mq(l) {
+    padding: clamp(16px, 1.7vw, 24px) clamp(40px, 3.5vw, 80px)
+      clamp(16px, 1.7vw, 24px) clamp(28px, 3vw, 48px);
+    font-size: clamp(13px, 1.4vw, 20px); 
+  }
 }
