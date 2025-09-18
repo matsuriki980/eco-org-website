@@ -8,7 +8,7 @@
   transition: all 0.4s;
 }
 .header.active {
-  background: rgba(0, 147, 107, 0.3);
+  background: rgba(0, 147, 107, 0.5);
 }
 .header__wrapper {
   height: 100%;
@@ -302,6 +302,143 @@
     margin-top: clamp(1px, 0.1vw, 3px);
     width: clamp(11px, 1.2vw, 20px);
     fill: currentColor;
+  }
+}
+.footer {
+  background: #00936B;
+  padding: clamp(32px, 10vw, 64px) 0;
+}
+.footer__wrapper {
+  width: 89.5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  row-gap: clamp(32px, 10vw, 64px);
+}
+.footer__logo {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(6px, 2.5vw, 12px);
+  margin-bottom: clamp(16px, 7vw, 40px);
+}
+.footer__groupActivities {
+  font-size: clamp(12px, 3.75vw, 14px);
+  font-weight: 400;
+}
+.footer .footer__logoTitle {
+  font-size: clamp(2.2rem, 7vw, 2.8rem);
+  font-weight: 500;
+}
+.footer__groupInformation {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(8px, 2.5vw, 10px);
+}
+.footer__groupInformation .groupnformationItem {
+  color: #fff;
+  font-size: clamp(12px, 3.75vw, 18px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.footer__groupInformation .groupnformationItem a {
+  color: #fff;
+  font-size: clamp(14px, 4.375vw, 20px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: clamp(6px, 2.5vw, 12px);
+       column-gap: clamp(6px, 2.5vw, 12px);
+}
+.footer__groupInformation .groupnformationItem .icon {
+  display: inline-block;
+  width: clamp(14px, 4.375vw, 22px);
+  transform: rotate(15deg);
+  margin-bottom: 5px;
+}
+.footer__groupInformation .groupnformationItem:nth-of-type(3) .icon {
+  transform: rotate(0);
+}
+.footer__navList {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(12px, 3.75vw, 18px);
+  margin-bottom: clamp(32px, 10vw, 64px);
+}
+.footer__navItem a {
+  color: #fff;
+  font-size: clamp(14px, 4.375vw, 18px);
+  font-weight: 500;
+}
+.footer .copyRight {
+  font-size: clamp(10px, 3vw, 15px);
+  font-weight: 500;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .footer {
+    height: min(50vh, 360px);
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  .footer__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60%;
+  }
+  .footer a {
+    transition: all 0.4s;
+  }
+  .footer a:hover {
+    opacity: 0.7;
+  }
+  .footer__left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer__logo {
+    margin: 0;
+  }
+  .footer .groupnformationItem {
+    font-size: clamp(10px, 1vw, 16px);
+  }
+  .footer .groupnformationItem a {
+    font-size: clamp(11px, 1.2vw, 17px);
+    -moz-column-gap: clamp(4px, 0.4vw, 8px);
+         column-gap: clamp(4px, 0.4vw, 8px);
+  }
+  .footer .groupnformationItem .icon {
+    width: clamp(11px, 1.2vw, 17px);
+  }
+  .footer__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .footer__navList {
+    display: flex;
+    flex-direction: row;
+    row-gap: 0;
+    -moz-column-gap: clamp(32px, 3.5vw, 64px);
+         column-gap: clamp(32px, 3.5vw, 64px);
+  }
+  .footer__navItem a {
+    color: #fff;
+    font-size: clamp(11px, 1.2vw, 18px);
+    font-weight: 500;
+  }
+  .footer .copyRight {
+    font-size: clamp(10px, 1.1vw, 14px);
+    width: 100%;
+    text-align: right;
   }
 }
 .mainvisual {
@@ -839,5 +976,199 @@
   .news__itemTitle {
     font-size: clamp(16px, 1.3vw, 22px);
     width: 65%;
+  }
+}
+.contactCta {
+  width: 100vw;
+  background-image: url(../img/common/contactCta-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: clamp(80px, 25vw, 100px) 0;
+  box-sizing: border-box;
+  margin-bottom: clamp(80px, 25vw, 150px);
+  position: relative;
+}
+@media (width >= 900px) {
+  .contactCta {
+    margin-bottom: clamp(100px, 11vw, 160px);
+  }
+}
+.contactCta::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 177, 107, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contactCta__wrapper {
+  width: 89.5%;
+  margin: 0 auto;
+  position: relative;
+}
+.contactCta__headingWrapper {
+  margin-bottom: clamp(40px, 12.5vw, 64px);
+  text-align: center;
+  color: #fff;
+}
+@media (width >= 900px) {
+  .contactCta__headingWrapper {
+    margin-bottom: clamp(40px, 3.5vw, 48px);
+  }
+}
+.contactCta__mainHeading {
+  margin-bottom: clamp(11px, 3.75vw, 18px);
+  font-size: clamp(28px, 8.75vw, 32px);
+  font-weight: 500;
+}
+@media (width >= 900px) {
+  .contactCta__mainHeading {
+    font-size: clamp(28px, 2.5vw, 36px);
+  }
+}
+.contactCta__subHeading {
+  font-size: clamp(14px, 4.375vw, 18px);
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #00936B;
+  color: #fff;
+}
+@media (width >= 900px) {
+  .contactCta__subHeading {
+    font-size: clamp(11px, 1.3vw, 18px);
+  }
+}
+.contactCta .ctaArea {
+  background: rgba(255, 255, 255, 0.8);
+  padding: clamp(48px, 15vw, 64px) 5.25%;
+  box-sizing: border-box;
+}
+.contactCta .ctaArea .lead {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(14px, 4.375vw, 18px);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: clamp(16px, 6.25vw, 20px);
+}
+.contactCta .ctaArea .tel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: clamp(8px, 2.5vw, 12px);
+  margin-bottom: clamp(24px, 7.5vw, 32px);
+}
+.contactCta .ctaArea .tel .telNumber {
+  font-size: clamp(26px, 8vw, 30px);
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: clamp(8px, 2.5vw, 12px);
+       column-gap: clamp(8px, 2.5vw, 12px);
+}
+.contactCta .ctaArea .tel .icon {
+  display: inline-block;
+  width: clamp(28px, 8.75vw, 32px);
+  transform: rotate(15deg);
+}
+.contactCta .ctaArea .tel .receptionhours {
+  font-size: clamp(12px, 3.75vw, 16px);
+  font-weight: 500;
+}
+.contactCta .ctaArea .contactCta__button {
+  width: 100%;
+  text-align: center;
+}
+.contactCta .ctaArea .contactCta__buttonWrapper {
+  padding: clamp(16px, 5vw, 24px) clamp(40px, 12.5vw, 80px) clamp(16px, 5vw, 24px) clamp(32px, 10vw, 64px);
+  box-sizing: border-box;
+  background: #00936B;
+  border-radius: 40px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  -moz-column-gap: clamp(8px, 0.8vw, 12px);
+       column-gap: clamp(8px, 0.8vw, 12px);
+  margin-top: 0;
+  transition: all 0.4s;
+  border: 1px solid #00936B;
+  display: inline-block;
+  width: min(100%, 400px);
+}
+.contactCta .ctaArea .contactCta__buttonWrapper .icon {
+  display: inline-block;
+  margin: clamp(1px, 0.1vw, 3px) clamp(8px, 0.8vw, 12px) 0;
+  width: clamp(14px, 4.375vw, 22px);
+  fill: currentColor;
+}
+.contactCta .ctaArea .contactCta__buttonWrapper .button__text {
+  font-size: clamp(14px, 4.375vw, 22px);
+  font-weight: 500;
+}
+
+@media (width >= 900px) {
+  .contactCta .ctaArea {
+    width: 65%;
+    margin: 0 auto;
+    padding: clamp(56px, 6vw, 80px) 5.25%;
+  }
+  .contactCta .ctaArea .lead {
+    font-size: clamp(13px, 1.4vw, 20px);
+    margin-bottom: clamp(24px, 2.6vw, 40px);
+  }
+  .contactCta .ctaArea .lead br {
+    display: none;
+  }
+  .contactCta .ctaArea .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    -moz-column-gap: clamp(20px, 2vw, 40px);
+         column-gap: clamp(20px, 2vw, 40px);
+  }
+  .contactCta .ctaArea .tel {
+    row-gap: clamp(8px, 2.5vw, 12px);
+    margin-bottom: 0;
+    width: 44%;
+  }
+  .contactCta .ctaArea .tel .telNumber {
+    font-size: clamp(22px, 2vw, 36px);
+    -moz-column-gap: clamp(4px, 0.4vw, 12px);
+         column-gap: clamp(4px, 0.4vw, 12px);
+  }
+  .contactCta .ctaArea .tel .icon {
+    width: clamp(22px, 2vw, 32px);
+    display: inline-block;
+    margin-top: 4px;
+  }
+  .contactCta .ctaArea .tel .receptionhours {
+    font-size: clamp(10px, 1vw, 15px);
+  }
+  .contactCta .ctaArea .contactCta__button {
+    width: 50%;
+  }
+  .contactCta .ctaArea .contactCta__buttonWrapper {
+    padding: clamp(16px, 1.7vw, 24px) clamp(40px, 3.5vw, 80px) clamp(16px, 1.7vw, 24px) clamp(28px, 3vw, 48px);
+    -moz-column-gap: clamp(8px, 0.8vw, 12px);
+         column-gap: clamp(8px, 0.8vw, 12px);
+    transition: all 0.4s;
+  }
+  .contactCta .ctaArea .contactCta__buttonWrapper:hover {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+  }
+  .contactCta .ctaArea .contactCta__buttonWrapper .icon {
+    width: clamp(13px, 1.4vw, 22px);
+  }
+  .contactCta .ctaArea .contactCta__buttonWrapper .button__text {
+    font-size: clamp(13px, 1.4vw, 22px);
   }
 }/*# sourceMappingURL=style.css.map */

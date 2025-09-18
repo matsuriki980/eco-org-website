@@ -1,128 +1,149 @@
-## 2025 年 9 月 13 日
+## 2025 年 9 月 18 日
 
 ## 作業内容
 
-・Our Activities セクション コーディング<br>
-・News セクション コーディング
+・お問い合わせCTA コーディング<br>
+・フッター コーディング
 
-## 気づき・学び
+## ポイント
+・親要素に height を指定して基準を固定
+・子要素（左右カラム）を flex-direction: column に設定
+・justify-content: space-between を指定し、上部と下部の要素を均等配置
+・これにより、左カラム（ロゴ・住所など）と右カラム（ナビ・コピーライトなど）が下端で揃う
 
-▶ 課題：Grid では右だけずらすのが難しい<br>
-「Our Activities」セクションの PC 表示において、2 列 2 行のカードを表示する構成で以下の問題が発生。<br>
+## HTML
+   <!-- フッター -->
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__left">
 
-・CSS Grid を用いて、1 つの ul にカード 4 枚（2 列 2 行）を配置。<br>
-・右列カードにのみ margin-top を指定しても、左右の高さが揃い、余白が崩れる<br>
-・Grid では個別に高さをずらす調整が困難<br>
-
-▶ 課題 2：Flex でも 1 つの ul 内では調整不可<br>
-・flex-wrap: wrap を用いて 1 つの u> に 4 枚配置したが、左右のカードの高さが揃ってしまう。<br>
-・align-items: flex-start を指定しても効果なし<br>
-・左右の高さの独立が困難<br>
-
-▶ 解決策：左右を別の ul に分割<br>
-・左右をそれぞれ別の ul としてマークアップ<br>
-・親要素に display: flex を指定し、横並びに構成<br>
-・右側の ul にのみ margin-top を指定してずらしを実現<br>
-
-結果、<br>
-・高さの自動揃えを回避<br>
-・各デバイスでの余白を安定化<br>
-・デザイン通りのレイアウトを再現可能<br>
-
-## HTML コード
-
-                <div class="our-Activities__listArea">
-
-                    <ul class="our-Activities__list">
-                        <li class="our-Activities__item">
-                            <div class="our-Activities__itemImg"><img src="img/top/our-activities1.jpg" alt=""></div>
-                            <h3 class="our-Activities__itemHeading">自然環境の保全</h3>
-                            <p class="our-Activities__itemDescription">
-                                山・森・川の清掃活動を通じて、豊かな自然を次世代へと引き継ぎます。<br>
-                                ゴミを拾う小さな一歩が、自然本来の美しさを取り戻す大きな力になると信じています。
-                            </p>
-                        </li>
-
-                        <li class="our-Activities__item">
-                            <div class="our-Activities__itemImg"><img src="img/top/our-activities3.jpg" alt=""></div>
-                            <h3 class="our-Activities__itemHeading">環境教育と啓発活動</h3>
-                            <p class="our-Activities__itemDescription">
-                                子どもから大人まで、自然や動物と共に生きる大切さを学ぶワークショップやイベントを実施しています。<br>
-                                体験を通して「守りたい」という気持ちを育てます。
-                            </p>
-                        </li>
-                    </ul>
-
-                    <ul class="our-Activities__list">
-                        <li class="our-Activities__item">
-                            <div class="our-Activities__itemImg"><img src="img/top/our-activities2.jpg" alt=""></div>
-                            <h3 class="our-Activities__itemHeading">動物とのふれあいの場づくり</h3>
-                            <p class="our-Activities__itemDescription">
-                                人と動物が安心して触れ合える機会を提供し、命の尊さを実感できる体験を広げています。<br>
-                                この体験が、人々の優しさと理解を育みます。
-                            </p>
-                        </li>
-
-                        <li class="our-Activities__item">
-                            <div class="our-Activities__itemImg"><img src="img/top/our-activities4.jpg" alt=""></div>
-                            <h3 class="our-Activities__itemHeading">共に広げる活動の輪</h3>
-                            <p class="our-Activities__itemDescription">
-                                地域住民やボランティアの方々と協力し、持続可能な取り組みを進めています。<br>
-                                共に行動することで、より大きな力となり、社会全体へと意識を広げていきます。
-                            </p>
-                        </li>
-                    </ul>
+                <!-- ロゴ -->
+                <div class="footer__logo">
+                    <p class="footer__groupActivities">自然・動物保護団体</p>
+                    <h2 class="footer__logoTitle">いのちの和</h2>
                 </div>
 
-## scss コード
+                <!-- 団体情報 -->
+                <ul class="footer__groupInformation">
+                    <li class="groupnformationItem">
+                        <span class="postcode">〒596-0814</span><br>
+                        <span class="address">大阪府岸和田岡山町297-8</span>
+                    </li>
+                    <li class="groupnformationItem">
+                        <a href="tel:000-0000-0000">
+                            <span class="icon"><img src="img/common/phone-icon.png" alt=""></span>
+                            <span class="text">000-0000-0000</span>
+                        </a>
+                    </li>
+                    <li class="groupnformationItem">
+                        <a href="mailto:marujljaaa.com">
+                            <span class="icon"><img src="img/common/mail-icon.png" alt=""></span>
+                            <span class="text">marujljaaa.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="footer__right">
+                <nav class="footer__nav">
+                    <ul class="footer__navList">
+                        <li class="footer__navItem"><a href="index.html">トップ</a></li>
+                        <li class="footer__navItem"><a href="news.html">お知らせ</a></li>
+                        <li class="footer__navItem"><a href="initiative.html">私たちの取り組み</a></li>
+
+                        <!-- ナビゲーション お問い合わせボタン -->
+                        <li class="footer__navItem">
+                            <a href="contact.html">
+                                お問い合わせ
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- コピーライト -->
+                <small class="copyRight">© 2025 いのちの和 All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+## scss
+// ==========================================================================
+// フッター 900px~ pc
+// ==========================================================================
 @include mq(l) {
-.our-Activities {
-padding: clamp(100px, 11vw, 160px) 0;
+  .footer {
+    height: min(50vh, 360px);
+    display: flex;
+    align-items: center;
+    padding: 0;
 
-    &__headingWrapper {
-      margin-bottom: 0;
+    &__wrapper {
+      @include flex__row;
+      justify-content: space-between;
+      height: 60%;
     }
 
-    .flex {
+    // リンクをホバー時、透過
+    a {
+      transition: all 0.4s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    // 左のコンテンツ
+    &__left {
+      height: 100%;
       @include flex__column;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: clamp(56px, 6vw, 80px);
     }
 
-    // リスト
-    &__listArea {
-      width: 70%;
-      flex-direction: row;
-      margin-left: auto;
+    // ロゴ
+    &__logo {
+      margin: 0;
+    }
+
+    .groupnformationItem {
+      font-size: clamp(10px, 1vw, 16px);
+
+      a {
+        font-size: clamp(11px, 1.2vw, 17px);
+        column-gap: clamp(4px, 0.4vw, 8px);
+      }
+
+      // アイコン
+      .icon {
+        width: clamp(11px, 1.2vw, 17px);
+      }
+    }
+
+    // 右のコンテンツ
+    &__right {
+      @include flex__column;
       justify-content: space-between;
+      height: 100%;
     }
 
-    &__list {
-      width: 45%;
-      row-gap: 7vw;
+    // ナビゲーション
+    &__nav {
+      &List {
+        @include flex__row;
+        row-gap: 0;
+        column-gap: clamp(32px, 3.5vw, 64px);
+      }
+
+      &Item a {
+        color: #fff;
+        font-size: clamp(11px, 1.2vw, 18px);
+        font-weight: 500;
+      }
     }
 
-    // リスト  右の列
-    &__list:nth-of-type(2) {
-      margin-top: 4vw;
-    }
-
-    &__item {
+    // コピーライト
+    .copyRight {
+      font-size: clamp(10px, 1.1vw, 14px);
       width: 100%;
-
-      // 画像
-      &Img {
-        margin-bottom: clamp(20px, 2.2vw, 24px);
-      }
-
-      // 見出し
-      &Heading {
-        margin-bottom: clamp(12px, 1.3vw, 16px);
-        font-size: clamp(20px, 2vw, 26px);
-      }
+      text-align: right;
     }
-
-}
+  }
 }

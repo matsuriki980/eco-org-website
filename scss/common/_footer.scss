@@ -1,0 +1,175 @@
+// ==========================================================================
+// 変数・ミックスイン読み込み
+// ==========================================================================
+@use "variables" as *;
+@use "mixin" as *;
+
+// ==========================================================================
+// フッター
+// ==========================================================================
+.footer {
+  background: $main-color;
+  padding: clamp(32px, 10vw, 64px) 0;
+
+  &__wrapper {
+    @include wrapper;
+    @include flex__column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: clamp(32px, 10vw, 64px);
+  }
+
+  // ロゴ
+  &__logo {
+    color: #fff;
+    @include flex__column;
+    row-gap: clamp(6px, 2.5vw, 12px);
+    margin-bottom: clamp(16px, 7vw, 40px);
+  }
+
+  &__groupActivities {
+    font-size: clamp(12px, 3.75vw, 14px);
+    font-weight: 400;
+  }
+
+  .footer__logoTitle {
+    font-size: clamp(2.2rem, 7vw, 2.8rem);
+    font-weight: 500;
+  }
+
+  // 団体情報
+  &__groupInformation {
+    @include flex__column;
+    row-gap: clamp(8px, 2.5vw, 10px);
+
+    .groupnformationItem {
+      color: #fff;
+      font-size: clamp(12px, 3.75vw, 18px);
+      font-weight: 500;
+      line-height: 1.5;
+
+      a {
+        color: #fff;
+        font-size: clamp(14px, 4.375vw, 20px);
+        @include flex__row;
+        align-items: center;
+        column-gap: clamp(6px, 2.5vw, 12px);
+      }
+
+      // アイコン
+      .icon {
+        display: inline-block;
+        width: clamp(14px, 4.375vw, 22px);
+        transform: rotate(15deg);
+        margin-bottom: 5px;
+      }
+
+      &:nth-of-type(3) .icon {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  // ナビゲーション
+  &__nav {
+    &List {
+      @include flex__column;
+      row-gap: clamp(12px, 3.75vw, 18px);
+      margin-bottom: clamp(32px, 10vw, 64px);
+    }
+
+    &Item a {
+      color: #fff;
+      font-size: clamp(14px, 4.375vw, 18px);
+      font-weight: 500;
+    }
+  }
+
+  // コピーライト
+  .copyRight {
+    font-size: clamp(10px, 3vw, 15px);
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  .footer {
+    height: min(50vh, 360px);
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &__wrapper {
+      @include flex__row;
+      justify-content: space-between;
+      height: 60%;
+    }
+
+    // リンクをホバー時、透過
+    a {
+      transition: all 0.4s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    // 左のコンテンツ
+    &__left {
+      height: 100%;
+      @include flex__column;
+      justify-content: space-between;
+    }
+
+    // ロゴ
+    &__logo {
+      margin: 0;
+    }
+
+    .groupnformationItem {
+      font-size: clamp(10px, 1vw, 16px);
+
+      a {
+        font-size: clamp(11px, 1.2vw, 17px);
+        column-gap: clamp(4px, 0.4vw, 8px);
+      }
+
+      // アイコン
+      .icon {
+        width: clamp(11px, 1.2vw, 17px);
+      }
+    }
+
+    // 右のコンテンツ
+    &__right {
+      @include flex__column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    // ナビゲーション
+    &__nav {
+      &List {
+        @include flex__row;
+        row-gap: 0;
+        column-gap: clamp(32px, 3.5vw, 64px);
+      }
+
+      &Item a {
+        color: #fff;
+        font-size: clamp(11px, 1.2vw, 18px);
+        font-weight: 500;
+      }
+    }
+
+    // コピーライト
+    .copyRight {
+      font-size: clamp(10px, 1.1vw, 14px);
+      width: 100%;
+      text-align: right;
+    }
+  }
+}

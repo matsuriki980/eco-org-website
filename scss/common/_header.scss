@@ -22,7 +22,7 @@
 
   // ファーストビューを超えたら背景表示
   &.active {
-    background: rgba($color: $main-color, $alpha: 0.3);
+    background: rgba($color: $main-color, $alpha: 0.5);
   }
 
   &__wrapper {
