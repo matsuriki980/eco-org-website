@@ -6,7 +6,7 @@
 ・フッター コーディング
 
 ## ポイント
-「フッターの左右カラムを下端で揃えるレイアウトを実装」
+「フッターの左右カラムを下端で揃えるレイアウトを実装」<br>
 ・親要素に height を指定して基準を固定<br>
 ・子要素（左右カラム）を flex-direction: column に設定<br>
 ・justify-content: space-between を指定し、上部と下部の要素を均等配置<br>
@@ -68,6 +68,7 @@
     </footer>
 
 ## scss
+
   .footer {
     height: min(50vh, 360px);
     display: flex;
