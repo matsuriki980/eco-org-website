@@ -69,6 +69,7 @@
 
 ## scss
 
+@include mq(l) {
   .footer {
     height: min(50vh, 360px);
     display: flex;
@@ -144,3 +145,4 @@
       text-align: right;
     }
   }
+}
