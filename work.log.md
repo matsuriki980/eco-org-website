@@ -6,9 +6,9 @@
 ・フッター コーディング
 
 ## ポイント
-・親要素に height を指定して基準を固定
-・子要素（左右カラム）を flex-direction: column に設定
-・justify-content: space-between を指定し、上部と下部の要素を均等配置
+・親要素に height を指定して基準を固定<br>
+・子要素（左右カラム）を flex-direction: column に設定<br>
+・justify-content: space-between を指定し、上部と下部の要素を均等配置<br>
 ・これにより、左カラム（ロゴ・住所など）と右カラム（ナビ・コピーライトなど）が下端で揃う
 
 ## HTML
