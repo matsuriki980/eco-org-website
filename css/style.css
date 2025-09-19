@@ -10,6 +10,9 @@
 .header.active {
   background: rgba(0, 147, 107, 0.5);
 }
+.header.active .header__logo--sub a {
+  color: #fff;
+}
 .header__wrapper {
   height: 100%;
   width: 89.5%;
@@ -24,6 +27,9 @@
   font-size: clamp(2.2rem, 7vw, 2.8rem);
   font-family: "Shippori Mincho", serif;
   font-weight: 500;
+}
+.header__logo--sub a {
+  color: #000;
 }
 .header .hamburger__button {
   width: clamp(40px, 12vw, 56px);
@@ -272,6 +278,9 @@
   .header__navItem a:hover::before {
     transform: scale(1, 1);
   }
+  .header__navItem--sub a {
+    color: #000;
+  }
   .header__navItem:last-of-type a {
     padding: clamp(12px, 1.3vw, 16px) clamp(24px, 2.5vw, 32px);
     box-sizing: border-box;
@@ -302,6 +311,12 @@
     margin-top: clamp(1px, 0.1vw, 3px);
     width: clamp(11px, 1.2vw, 20px);
     fill: currentColor;
+  }
+  .header.active .header__navItem--sub a {
+    color: #fff;
+  }
+  .header.active .header__navItem--sub a::before {
+    background: #fff;
   }
 }
 .footer {
@@ -551,7 +566,7 @@
   }
 }
 .about__description {
-  font-size: clamp(14px, 4.375vw, 18px);
+  font-size: clamp(14px, 3.75vw, 18px);
   font-weight: 400;
   line-height: 2;
   text-align: center;
@@ -715,7 +730,7 @@
   font-weight: 500;
 }
 .our-Activities__itemDescription {
-  font-size: clamp(14px, 4.375vw, 18px);
+  font-size: clamp(14px, 3.75vw, 18px);
   font-weight: 400;
   line-height: 2;
 }
@@ -1069,8 +1084,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  -moz-column-gap: clamp(8px, 2.5vw, 12px);
-       column-gap: clamp(8px, 2.5vw, 12px);
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .contactCta .ctaArea .tel .icon {
   display: inline-block;
@@ -1170,5 +1185,188 @@
   }
   .contactCta .ctaArea .contactCta__buttonWrapper .button__text {
     font-size: clamp(13px, 1.4vw, 22px);
+  }
+}
+.our-activities--sub {
+  width: 89.5%;
+  margin: 0 auto;
+  margin-bottom: clamp(80px, 25vw, 150px);
+}
+@media (width >= 900px) {
+  .our-activities--sub {
+    margin-bottom: clamp(100px, 11vw, 160px);
+  }
+}
+.our-activities--sub .our-activities__fv {
+  height: min(40vh, 320px);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-bottom: clamp(32px, 10vw, 64px);
+}
+@media (width >= 900px) {
+  .our-activities--sub .our-activities__fv {
+    height: min(40vh, 320px);
+    margin-bottom: clamp(32px, 3.5vw, 64px);
+  }
+}
+.our-activities--sub .our-activities__fv .our-Activities__headingWrapper {
+  margin-bottom: 0;
+  text-align: center;
+}
+.our-activities--sub .our-activities__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(56px, 15vw, 100px);
+}
+.our-activities--sub .our-activities__itemImg {
+  margin-bottom: clamp(16px, 6.25vw, 32px);
+}
+.our-activities--sub .our-activities__item .label {
+  font-size: clamp(12px, 3.75vw, 16px);
+  font-weight: 500;
+  color: #00936B;
+  margin-bottom: clamp(8px, 2.5vw, 12px);
+  display: inline-block;
+}
+.our-activities--sub .our-activities__itemTitle {
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: 500;
+}
+
+@media (width >= 900px) {
+  .our-activities--sub .our-activities__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(64px, 7vw, 100px) clamp(48px, 5vw, 80px);
+  }
+  .our-activities--sub .our-activities__item {
+    cursor: pointer;
+  }
+  .our-activities--sub .our-activities__itemImg {
+    margin-bottom: clamp(8px, 1vw, 20px);
+    overflow: hidden;
+  }
+  .our-activities--sub .our-activities__itemImg img {
+    transform: scale(1);
+    transition: all 0.4s;
+  }
+  .our-activities--sub .our-activities__item:hover img {
+    transform: scale(1.2);
+  }
+  .our-activities--sub .our-activities__item .label {
+    font-size: clamp(12px, 1.3vw, 16px);
+    margin-bottom: clamp(8px, 1vw, 12px);
+  }
+  .our-activities--sub .our-activities__itemTitle {
+    font-size: clamp(16px, 1.7vw, 24px);
+  }
+}
+.our-Activities__detailImg {
+  margin-bottom: clamp(16px, 6.25vw, 32px);
+}
+.our-Activities__detail .label {
+  font-size: clamp(12px, 3.75vw, 16px);
+  font-weight: 500;
+  color: #00936B;
+  margin-bottom: clamp(8px, 2.5vw, 12px);
+  display: inline-block;
+}
+.our-Activities__detailTitle {
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: 500;
+  margin-bottom: clamp(40px, 12.5vw, 64px);
+}
+.our-Activities__detailOverview {
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: 500;
+  margin-bottom: clamp(12px, 3.75vw, 20px);
+}
+.our-Activities__detailDescription {
+  font-size: clamp(14px, 3.75vw, 18px);
+  font-weight: 400;
+  line-height: 2;
+  margin-bottom: clamp(40px, 12.5vw, 64px);
+}
+@media (width >= 900px) {
+  .our-Activities__detailDescription {
+    font-size: clamp(11px, 1.15vw, 17px);
+  }
+}
+.our-Activities__detailButton {
+  width: 100%;
+  text-align: center;
+}
+.our-Activities__detailButtonWrapper {
+  padding: clamp(16px, 5vw, 24px) clamp(32px, 10vw, 64px) clamp(16px, 5vw, 24px) clamp(40px, 12.5vw, 80px);
+  background: #00936B;
+  border: 1px solid #00936B;
+  border-radius: 40px;
+  font-size: clamp(14px, 4.375vw, 22px);
+  font-weight: 500;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s;
+}
+.our-Activities__detailButtonWrapper::before {
+  content: "";
+  display: inline-block;
+  width: 2.8%;
+  height: 13%;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: 51%;
+  left: 10%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all 0.4s;
+}
+.our-Activities__detailButtonWrapper:hover {
+  background: #fff;
+  border: 1px solid #000;
+  color: inherit;
+}
+.our-Activities__detailButtonWrapper:hover::before {
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+@media (width >= 900px) {
+  .our-Activities__detailButtonWrapper {
+    padding: clamp(16px, 1.7vw, 24px) clamp(28px, 3vw, 48px) clamp(16px, 1.7vw, 24px) clamp(40px, 3.5vw, 80px);
+    font-size: clamp(13px, 1.4vw, 20px);
+  }
+}
+
+@media (width >= 900px) {
+  .our-Activities__detail {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .our-Activities__detailImg {
+    margin-bottom: clamp(12px, 1.3vw, 20px);
+  }
+  .our-Activities__detail .label {
+    font-size: clamp(12px, 3.75vw, 14px);
+    margin-bottom: clamp(8px, 1vw, 12px);
+  }
+  .our-Activities__detailTitle {
+    font-size: clamp(20px, 2vw, 24px);
+    margin-bottom: clamp(40px, 3.5vw, 64px);
+  }
+  .our-Activities__detailOverview {
+    font-size: clamp(20px, 2vw, 24px);
+    margin-bottom: clamp(8px, 1vw, 12px);
+  }
+  .our-Activities__detailDescription {
+    font-size: clamp(14px, 3.75vw, 18px);
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: clamp(40px, 3.5vw, 64px);
+  }
+}
+@media (width >= 900px) and (width >= 900px) {
+  .our-Activities__detailDescription {
+    font-size: clamp(11px, 1.15vw, 17px);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -315,7 +315,7 @@
   }
 
   &__buttonWrapper {
-    @include button__style;
+    @include button__style--next;
   }
 }
 
@@ -451,7 +451,7 @@
     text-align: center;
 
     &Wrapper {
-      @include button__style;
+      @include button__style--next;
     }
   }
 }
@@ -589,7 +589,7 @@
         @include flex__row;
         align-items: center;
         justify-content: center;
-        column-gap: clamp(8px, 2.5vw, 12px);
+        column-gap: 3px;
       }
 
       // アイコン

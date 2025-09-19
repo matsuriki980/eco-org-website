@@ -23,6 +23,11 @@
   // ファーストビューを超えたら背景表示
   &.active {
     background: rgba($color: $main-color, $alpha: 0.5);
+
+    // ロゴ
+    .header__logo--sub a {
+      color: #fff;
+    }
   }
 
   &__wrapper {
@@ -38,6 +43,11 @@
   &__logo {
     a {
       @include logo__style;
+    }
+
+    // 下層ページ ロゴ
+    &--sub a {
+      color: #000;
     }
   }
 
@@ -354,6 +364,11 @@
         }
       }
 
+      // 下層ページ リンク
+      &--sub a {
+        color: #000;
+      }
+
       // お問い合わせボタン
       &:last-of-type a {
         padding: clamp(12px, 1.3vw, 16px) clamp(24px, 2.5vw, 32px);
@@ -387,6 +402,19 @@
           margin-top: clamp(1px, 0.1vw, 3px);
           width: clamp(11px, 1.2vw, 20px);
           fill: currentColor;
+        }
+      }
+    }
+
+    // ナビゲーション リンク 色変更
+    &.active {
+      // ナビゲーション
+      .header__navItem--sub a {
+        color: #fff;
+
+        // 下部線
+        &::before {
+          background: #fff;
         }
       }
     }
