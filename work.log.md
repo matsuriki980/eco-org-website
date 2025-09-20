@@ -9,7 +9,7 @@
 ## ポイント
 「ObserverとGSAPを組み合わせたフェードインアニメーション」<br>
 ・[about][our-Activities]の両方、Observerで監視して画面内に入ったら画像・リストをフェードイン<br>
-・[our-Activities]の各項目を取得し、個別にフェードイン
+・[our-Activities]の各項目を取得し、個別にフェードイン<br>
 ・自然のやさしさをイメージし、フワッとフェードイン
 
 ## js
