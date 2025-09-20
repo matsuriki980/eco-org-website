@@ -409,6 +409,14 @@
     // ナビゲーション リンク 色変更
     &.active {
       // ナビゲーション
+      .header__navItem a {
+        // 下部線
+        &::before {
+          background: #fff;
+        }
+      }
+
+      // ナビゲーション
       .header__navItem--sub a {
         color: #fff;
 

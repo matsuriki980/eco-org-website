@@ -312,6 +312,9 @@
     width: clamp(11px, 1.2vw, 20px);
     fill: currentColor;
   }
+  .header.active .header__navItem a::before {
+    background: #fff;
+  }
   .header.active .header__navItem--sub a {
     color: #fff;
   }
@@ -456,6 +459,17 @@
     text-align: right;
   }
 }
+.about__img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.our-Activities__item {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px);
+}
+
 .mainvisual {
   width: 100vw;
   height: 100dvh;
@@ -478,18 +492,19 @@
   transform: translateX(-50%);
   bottom: 20%;
   color: #fff;
-  text-shadow: 0px 0px 25px rgba(0, 177, 107, 0.5);
 }
 .mainvisual .copy__wrapper .main__copy {
   font-size: clamp(32px, 10vw, 56px);
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: clamp(16px, 8.75vw, 24px);
+  text-shadow: 0px 0px 25px rgba(0, 49, 30, 0.7);
 }
 .mainvisual .copy__wrapper .sub__copy {
-  font-size: clamp(14px, 4.3vw, 22px);
-  font-weight: 400;
+  font-size: clamp(14px, 4.5vw, 24px);
+  font-weight: 500;
   line-height: 2;
+  text-shadow: 0px 0px 30px rgb(0, 49, 30);
 }
 
 @media (width >= 900px) {
