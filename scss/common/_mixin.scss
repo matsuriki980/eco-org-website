@@ -165,6 +165,7 @@ $breakpoints: (
   display: inline-block;
   position: relative;
   transition: all 0.4s;
+  letter-spacing: 0.2em;
 
   // 矢印
   &::after {

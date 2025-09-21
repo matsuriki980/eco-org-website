@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO / OGP -->
-    <meta name="description" content="このページでは、これまで私たちが行ってきた取り組みを紹介しています。">
+    <meta name="description" content="このページは、お問い合わせフォームです。">
 
-    <meta property="og:title" content="取り組み詳細 | ouractivities">
-    <meta property="og:description" content="このページでは、これまで私たちが行ってきた取り組みを紹介しています。">
+    <meta property="og:title" content="お問い合わせ | contact">
+    <meta property="og:description" content="このページは、お問い合わせフォームです。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://matsuyamarikiya.jp/bond_of_life/ouractivities-detail1.html">
+    <meta property="og:url" content="https://matsuyamarikiya.jp/bond_of_life/contact.html">
     <meta property="og:site_name" content="自然・動物保護団体 いのちの和">
 
-    <title>取り組み詳細 | ouractivities</title>
+    <title>お問い合わせ | contact</title>
 
     <!-- CSS読み込み -->
     <link rel="stylesheet" href="css/reset.css">
@@ -98,86 +98,84 @@
         </div>
     </header>
 
-    <!-- our-Activitiesセクション -->
-    <section class="our-activities--sub">
+    <!-- contact-formセクション -->
+    <section class="contact-form">
 
         <!-- ファーストビュー -->
-        <div class="our-activities__fv" id="fv">
+        <div class="contact-form__fv" id="fv">
 
             <!-- 見出し -->
-            <div class="our-Activities__headingWrapper">
-                <h1 class="our-Activities__mainHeading">私たちの取り組み</h1>
-                <h2 class="our-Activities__subHeading">our activities</h2>
+            <div class="contact-form__headingWrapper">
+                <h1 class="contact-form__mainHeading">お問い合わせ</h1>
+                <h2 class="contact-form__subHeading">contact form</h2>
             </div>
 
         </div>
 
-        <!-- 詳細 -->
-        <div class="our-Activities__detail">
+        <!-- フォーム -->
+        <div class="contact-formArea">
+            <div class="contact-formAreaWrapper">
 
-            <!-- 画像 -->
-            <div class="our-Activities__detailImg"><img src="img/ouractivities/ouractivities-detail1.jpg" alt="川のごみを拾う人物の写真"></div>
+                <!-- ステップ -->
+                <ol class="step-list">
+                    <li class="step-list__item">
+                        <div class="step-list__number">01</div>
+                        <div class="step-list__text">入力</div>
+                    </li>
 
-            <!-- タイトル -->
-            <span class="label">2025年 9月 18日</span>
-            <h3 class="our-Activities__detailTitle">川を守ろうプロジェクト</h3>
+                    <li class="step-list__item">
+                        <div class="step-list__number">02</div>
+                        <div class="step-list__text">確認</div>
+                    </li>
 
-            <!-- 概要 -->
-            <h3 class="our-Activities__detailOverview">概要</h3>
-            <p class="our-Activities__detailDescription">
-                地域の大切な水辺を未来へつなぐため、私たちは「川を守ろうプロジェクト」に取り組みました。<br>
-                定期的に河川敷や川岸のごみを回収し、水質調査を行うことで、きれいで安全な水辺環境を保つことを目指しました。<br>
-                活動には子どもから大人まで幅広い世代が参加し、楽しみながら環境について学ぶ機会となりました。<br>
-                小さな一歩の積み重ねが、生き物がすみやすい川を育み、地域の豊かな自然を守る力になったと感じています。
-            </p>
-        </div>
+                    <li class="step-list__item">
+                        <div class="step-list__number">03</div>
+                        <div class="step-list__text">完了</div>
+                    </li>
+                </ol>
 
-        <!-- ボタン -->
-        <div class="our-Activities__detailButton">
-            <a href="ouractivities.html" class="our-Activities__detailButtonWrapper">取り組み一覧に戻る</a>
+
+                <!-- リード文 -->
+                <p class="contact-formAreaLead">
+                    ご質問やご相談など、お気軽にお寄せください。 <br>
+                    担当者より順次ご連絡させていただきます。
+                </p>
+
+                <!-- フォーム -->
+                <form action="">
+
+                    <div class="contact-form__list">
+                        <div class="contact-form__item">
+                            <label for="username">氏名<span class="label">必須</span></label>
+                            <input type="text" id="username" name="username" placeholder="山田太郎" required>
+                        </div>
+
+                        <div class="contact-form__item">
+                            <label for="furigana">フリガナ</label>
+                            <input type="text" id="furigana" name="furigana" placeholder="やまだたろう">
+                        </div>
+
+                        <div class="contact-form__item">
+                            <label for="mail">メールアドレス<span class="label">必須</span></label>
+                            <input type="text" id="mail" name="mail" placeholder="matsuyamarikiya17@.com" required>
+                        </div>
+
+                        <div class="contact-form__item">
+                            <label for="contact">お問い合わせ内容<span class="label">必須</span></label>
+                            <textarea id="contact" name="contact" placeholder="山田太郎" rows="6" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <button type="submit" class="contact-form__button">
+                        <span class="contact-form__buttonWrapper">入力内容を確認する</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
 
-    <!-- お問い合わせCTA -->
-    <section class="contactCta">
-        <div class="contactCta__wrapper">
-
-            <!-- 見出し -->
-            <div class="contactCta__headingWrapper">
-                <h2 class="contactCta__mainHeading">お問い合わせ</h2>
-                <h3 class="contactCta__subHeading">contact</h3>
-            </div>
-
-            <!-- cta -->
-            <div class="ctaArea">
-                <p class="lead">ご不明な点がございましたら<br>お気軽にお問い合わせください</p>
-
-                <div class="flex">
-
-                    <!-- 電話番号 -->
-                    <div class="tel"><span class="telNumber">
-                            <span class="icon"><img src="img/common/phone-icon2.png" alt=""></span>
-                            000-0000-0000</span>
-                        <span class="receptionhours">受付時間 平日9:00~17:00</span>
-                    </div>
-
-                    <!-- お問い合わせボタン -->
-                    <div class="contactCta__button">
-                        <a href="contact.html" class="contactCta__buttonWrapper">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                                    <path
-                                        d="M 0 7 L 0 9.875 L 25 29.71875 L 50 10.125 L 50 7 Z M 0 12.40625 L 0 43 L 50 43 L 50 12.65625 L 25.625 31.78125 C 25.445313 31.921875 25.21875 32 25 32 C 24.78125 32 24.558594 31.925781 24.375 31.78125 Z" />
-                                </svg>
-                            </span>
-                            <span class="button__text">お問い合わせする</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- フッター -->
     <footer class="footer">

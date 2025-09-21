@@ -1,0 +1,79 @@
+// ==========================================================================
+// 変数・ミックスイン読み込み
+// ==========================================================================
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
+
+// ==========================================================================
+// news__detailページ
+// ==========================================================================
+.news__detail {
+  @include wrapper;
+  @include section__margin;
+
+  // ファーストビュー
+  .news__fv {
+    @include fv-sub;
+
+    // 見出し
+    .news__headingWrapper {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  // 記事情報
+  .news__itemMeta {
+    margin-bottom: clamp(8px, 2.5vw, 12px);
+  }
+
+  // 記事タイトル
+  .news__itemTitle {
+    margin-bottom: clamp(32px, 7.5vw, 48px);
+    padding-bottom: clamp(16px, 5vw, 20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+
+  &Description {
+    @include description__style;
+    margin-bottom: clamp(40px, 12.5vw, 64px);
+  }
+
+  // ボタン
+  &Button {
+    width: 100%;
+    text-align: center;
+
+    &Wrapper {
+      @include button__style--back;
+    }
+  }
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  .news__detail {
+    width: min(1100px, 85%);
+    margin: 0 auto clamp(100px, 11vw, 160px);
+
+    // 記事情報
+    .news__itemMeta {
+      margin-bottom: clamp(8px, 1vw, 12px);
+    }
+
+    // 記事タイトル
+    .news__itemTitle {
+      font-size: clamp(18px, 2vw, 24px);
+      margin-bottom: clamp(14px, 1.5vw, 24px);
+      padding-bottom: clamp(16px, 1.5vw, 20px);
+    }
+
+    &Description {
+      @include description__style;
+      margin-bottom: clamp(40px, 3.5vw, 64px);
+    }
+  }
+}

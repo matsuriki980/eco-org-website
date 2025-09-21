@@ -111,3 +111,42 @@ const ourActivitiesObserver = new IntersectionObserver(ourActivitiesFadein, {
 ourActivitiesItem.forEach((item) => {
   ourActivitiesObserver.observe(item);
 });
+
+// ==========================================================================
+// newsセクション フェードイン
+// ==========================================================================
+const newsItem = document.querySelectorAll(".news__item");
+
+const newsFadein = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      newsItem.forEach((item, index) => {
+        gsap.fromTo(
+          item,
+          {
+            autoAlpha: 0,
+            filter: "blur(10px)",
+          },
+          {
+            duration: 1.5,
+            autoAlpha: 1,
+            delay: index * 0.2,
+
+            filter: "blur(0px)",
+            ease: "power2.out",
+          }
+        );
+      });
+
+      observer.unobserve(entry.target); // newsセクションは一度だけ監視
+    }
+  });
+};
+
+// 監視の設定
+const newsObserver = new IntersectionObserver(newsFadein, {
+  threshold: 0.9, // 画面の90%に入ったら実行
+});
+
+// newsセクションを監視
+newsObserver.observe(document.querySelector("#news"));

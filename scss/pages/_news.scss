@@ -1,0 +1,130 @@
+// ==========================================================================
+// 変数・ミックスイン読み込み
+// ==========================================================================
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
+
+// ==========================================================================
+// our-Activities__detailページ
+// ==========================================================================
+.news--sub {
+  @include wrapper;
+  @include section__margin;
+
+  // ファーストビュー
+  .news__fv {
+    @include fv-sub;
+
+    // 見出し
+    .news__headingWrapper {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  // リストエリア
+  .news__listArea {
+    @include flex__column;
+    justify-content: space-between;
+    row-gap: clamp(56px, 15vw, 72px);
+  }
+
+  // タブ
+  .news__tabList {
+    @include flex__row;
+    column-gap: clamp(32px, 10vw, 56px);
+  }
+
+  .news__tebItem {
+    font-size: clamp(18px, 5.6vw, 24px);
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 0.5;
+
+    // 一つ目のタブ
+    &:first-of-type {
+      opacity: 1;
+    }
+  }
+
+  // リスト
+  .news__list--sub {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(20px, 6.25vw, 24px);
+    margin-bottom: clamp(56px, 15vw, 80px);
+    width: 100%;
+  }
+
+  .news__item--sub {
+    a {
+      display: flex;
+      flex-direction: column;
+      row-gap: clamp(8px, 2.5vw, 16px);
+      padding-bottom: clamp(20px, 6.25vw, 24px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      height: auto;
+    }
+  }
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  .news--sub {
+    // リストエリア
+    .news__listArea {
+      @include flex__row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: min(1100px, 85%);
+      margin: 0 auto;
+    }
+
+    // タブ
+    .news__tabList {
+      @include flex__column;
+      row-gap: clamp(16px, 1.7vw, 24px);
+      width: 20%;
+    }
+
+    .news__tebItem {
+      font-size: clamp(14px, 1.5vw, 20px);
+    }
+
+    // リスト
+    .news__list--sub {
+      display: flex;
+      flex-direction: column;
+      row-gap: clamp(20px, 6.25vw, 24px);
+      margin-bottom: clamp(56px, 15vw, 80px);
+      width: 85%;
+    }
+
+    .news__item--sub {
+      a {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      // 記事情報
+      &Meta {
+        @include flex__row;
+        align-items: center;
+        column-gap: clamp(8px, 0.8vw, 16px);
+        margin-right: clamp(40px, 4.5vw, 64px);
+      }
+
+      // 日付
+      &Date {
+        font-size: clamp(11px, 1.2vw, 16px);
+      }
+
+      // カテゴリ
+      &Category {
+        font-size: clamp(10px, 1vw, 14px);
+      }
+    }
+  }
+}
