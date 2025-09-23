@@ -113,7 +113,7 @@
         </div>
 
         <!-- フォーム -->
-        <div class="contact-formArea">
+        <div class="contact-formArea" id="step1">
             <div class="contact-formAreaWrapper">
 
                 <!-- ステップ -->
@@ -167,10 +167,122 @@
                     </div>
 
                     <!-- 送信ボタン -->
-                    <button type="submit" class="contact-form__button">
-                        <span class="contact-form__buttonWrapper">入力内容を確認する</span>
-                    </button>
+                    <div class="contact-form__button">
+                        <button type="submit" class="contact-form__button--next">
+                            入力内容を送信する
+                        </button>
+                    </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- 入力確認画面-->
+        <div class="contact-confirm" id="step2">
+            <div class="contact-confirmWrapper">
+
+                <!-- ステップ -->
+                <ol class="step-list">
+                    <li class="step-list__item">
+                        <div class="step-list__number">01</div>
+                        <div class="step-list__text">入力</div>
+                    </li>
+
+                    <li class="step-list__item">
+                        <div class="step-list__number">02</div>
+                        <div class="step-list__text">確認</div>
+                    </li>
+
+                    <li class="step-list__item">
+                        <div class="step-list__number">03</div>
+                        <div class="step-list__text">完了</div>
+                    </li>
+                </ol>
+
+                <!-- リード文 -->
+                <p class="contact-formAreaLead">
+                    以下の内容で送信します。 <br>
+                    入力内容を確認の上、「入力内容を送信する」ボタンを押してください。
+                </p>
+
+                <!-- リスト -->
+                <dl class="confirm__list">
+                    <div class="confirm__item">
+                        <dt class="confirm__itemTitle">氏名</dt>
+                        <dd id="c_name" class="confirm__textArea">松山里貴</dd>
+                    </div>
+
+                    <div class="confirm__item">
+                        <dt class="confirm__itemTitle">フリガナ</dt>
+                        <dd id="c_furigana" class="confirm__textArea"></dd>
+                    </div>
+
+                    <div class="confirm__item">
+                        <dt class="confirm__itemTitle">メールアドレス</dt>
+                        <dd id="c_mail" class="confirm__textArea"></dd>
+                    </div>
+
+                    <div class="confirm__item">
+                        <dt class="confirm__itemTitle">お問い合わせ内容</dt>
+                        <dd id="c_contact-detail" class="confirm__textArea"></dd>
+                    </div>
+                </dl>
+
+                <div class="contact-form__buttonArea">
+
+
+                    <!-- 戻るボタン -->
+                    <div class="contact-form__button">
+                        <button type="submit" class="contact-form__button--back">
+                            入力画面に戻る
+                        </button>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="contact-form__button">
+                        <button type="submit" class="contact-form__button--next">
+                            入力内容を送信する
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 送信完了画面 -->
+        <div class="contact-thanks" id="step3">
+            <div class="contact-thanksWrapper">
+                <!-- ステップ -->
+                <ol class="step-list">
+                    <li class="step-list__item">
+                        <div class="step-list__number">01</div>
+                        <div class="step-list__text">入力</div>
+                    </li>
+
+                    <li class="step-list__item">
+                        <div class="step-list__number">02</div>
+                        <div class="step-list__text">確認</div>
+                    </li>
+
+                    <li class="step-list__item">
+                        <div class="step-list__number">03</div>
+                        <div class="step-list__text">完了</div>
+                    </li>
+                </ol>
+
+                <!-- リード文 -->
+                <p class="contact-formAreaLead">
+                    以下の内容で送信します。 <br>
+                    入力内容を確認の上、「入力内容を送信する」ボタンを押してください。
+                </p>
+
+                <!-- 戻るボタン -->
+                <div class="contact-form__button">
+                    <button type="submit" class="contact-form__button--back">
+                        トップページに戻る
+                    </button>
+                </div>
             </div>
         </div>
     </section>

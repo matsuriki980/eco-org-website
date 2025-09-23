@@ -154,8 +154,7 @@ $breakpoints: (
 // ボタンスタイル (進む)
 // ==========================================================================
 @mixin button__style--next {
-  padding: clamp(16px, 5vw, 24px) clamp(40px, 12.5vw, 80px)
-    clamp(16px, 5vw, 24px) clamp(32px, 10vw, 64px);
+  padding: clamp(16px, 5vw, 24px) 0;
   background: $main-color;
   border: 1px solid $main-color;
   border-radius: 40px;
@@ -166,18 +165,19 @@ $breakpoints: (
   position: relative;
   transition: all 0.4s;
   letter-spacing: 0.2em;
+  width: min(360px, 75%);
 
   // 矢印
   &::after {
     content: "";
     display: inline-block;
-    width: 2.8%;
-    height: 13%;
+    width: min(10px, 1.867vw);
+    height: min(10px, 1.867vw);
     border-left: 2px solid #fff;
     border-bottom: 2px solid #fff;
     position: absolute;
     top: 52%;
-    right: 12%;
+    right: 8%;
     transform: translateY(-50%) rotate(-135deg);
     transition: all 0.4s;
   }
@@ -198,9 +198,9 @@ $breakpoints: (
   // 900px~ PC
   // ============================
   @include mq(l) {
-    padding: clamp(16px, 1.7vw, 24px) clamp(40px, 3.5vw, 80px)
-      clamp(16px, 1.7vw, 24px) clamp(28px, 3vw, 48px);
+    padding: clamp(16px, 1.7vw, 24px) 0;
     font-size: clamp(13px, 1.4vw, 20px);
+    width: min(360px, 25vw);
   }
 }
 
@@ -208,8 +208,7 @@ $breakpoints: (
 // ボタンスタイル (戻る)
 // ==========================================================================
 @mixin button__style--back {
-  padding: clamp(16px, 5vw, 24px) clamp(32px, 10vw, 64px) clamp(16px, 5vw, 24px)
-    clamp(40px, 12.5vw, 80px);
+  padding: clamp(16px, 5vw, 24px) 0;
   background: $main-color;
   border: 1px solid $main-color;
   border-radius: 40px;
@@ -219,13 +218,15 @@ $breakpoints: (
   display: inline-block;
   position: relative;
   transition: all 0.4s;
+  letter-spacing: 0.2em;
+  width: min(360px, 75%);
 
   // 矢印
   &::before {
     content: "";
     display: inline-block;
-    width: 2.8%;
-    height: 13%;
+    width: min(10px, 1.867vw);
+    height: min(10px, 1.867vw);
     border-left: 2px solid #fff;
     border-bottom: 2px solid #fff;
     position: absolute;
@@ -251,9 +252,9 @@ $breakpoints: (
   // 900px~ PC
   // ============================
   @include mq(l) {
-    padding: clamp(16px, 1.7vw, 24px) clamp(28px, 3vw, 48px)
-      clamp(16px, 1.7vw, 24px) clamp(40px, 3.5vw, 80px);
+    padding: clamp(16px, 1.7vw, 24px) 0;
     font-size: clamp(13px, 1.4vw, 20px);
+    width: min(360px, 25vw);
   }
 }
 

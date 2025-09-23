@@ -7,6 +7,155 @@
 // ==========================================================================
 // お問い合わせフォーム
 // ==========================================================================
+
+// ======================
+// ボタン
+// ======================
+.contact-form__buttonArea {
+  @include flex__column;
+  row-gap: clamp(16px, 5vw, 24px);
+  align-items: center;
+}
+
+.contact-form__button {
+  width: 100%;
+  text-align: center;
+
+  &--next,
+  &--back {
+    cursor: pointer;
+  }
+
+  &--next {
+    @include button__style--next;
+  }
+
+  &--back {
+    @include button__style--back;
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+
+    &::before {
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+
+    // ホバー時の動き
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  .contact-form__buttonArea {
+    @include flex__row;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: clamp(24px, 2.6vw, 40px);
+    width: min(800px, 62%);
+    margin: 0 auto;
+
+    .contact-form__button {
+      width: auto;
+      text-align: center;
+    }
+  }
+}
+
+// ======================
+// ステップ
+// ======================
+.step-list {
+  @include flex__row;
+  justify-content: center;
+  margin-bottom: clamp(40px, 12.5vw, 64px);
+  text-align: center;
+  column-gap: clamp(24px, 7.5vw, 48px);
+
+  &__item {
+    @include flex__column;
+    row-gap: clamp(8px, 2.5vw, 16px);
+  }
+
+  &__number {
+    font-size: clamp(20px, 4.7vw, 24px);
+    border-radius: 50%;
+    background: $main-color;
+    border: 1px solid $main-color;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(72px, 17.5vw);
+    height: min(72px, 17.5vw);
+  }
+
+  &__text {
+    font-size: clamp(16px, 5vw, 20px);
+    font-weight: 500;
+    color: $main-color;
+  }
+
+  &__item {
+    // 2・3番目のリスト
+    &:nth-of-type(2) .step-list__number,
+    &:nth-of-type(3) .step-list__number {
+      background: transparent;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      color: rgba($color: #000000, $alpha: 0.2);
+    }
+
+    &:nth-of-type(2) .step-list__text,
+    &:nth-of-type(3) .step-list__text {
+      color: rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+}
+
+// ======================
+// リード文
+// ======================
+.contact-formAreaLead {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: clamp(40px, 12.5vw, 64px);
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  // ステップ
+  .step-list {
+    &__number {
+      font-size: min(24px, 2vw);
+      width: min(80px, 5.333vw);
+      height: min(80px, 5.333vw);
+    }
+
+    &__text {
+      font-size: min(24px, 2vw);
+    }
+  }
+
+  // リード文
+  .contact-formAreaLead {
+    font-size: clamp(14px, 1.5vw, 18px);
+    margin-bottom: clamp(32px, 3.5vw, 64px);
+  }
+}
+
+// ======================
+// フォーム画面
+// ======================
+
 .contact-form {
   // ファーストビュー
   &__fv {
@@ -33,62 +182,6 @@
 
     &Wrapper {
       @include wrapper;
-    }
-
-    // ステップ
-    .step-list {
-      @include flex__row;
-      justify-content: center;
-      margin-bottom: clamp(40px, 12.5vw, 64px);
-      text-align: center;
-      column-gap: clamp(24px, 7.5vw, 48px);
-
-      &__item {
-        @include flex__column;
-        row-gap: clamp(8px, 2.5vw, 16px);
-      }
-
-      &__number {
-        font-size: clamp(20px, 4.7vw, 24px);
-        border-radius: 50%;
-        background: $main-color;
-        border: 1px solid $main-color;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: min(72px, 17.5vw);
-        height: min(72px, 17.5vw);
-      }
-
-      &__text {
-        font-size: clamp(16px, 5vw, 20px);
-        font-weight: 500;
-      }
-
-      &__item {
-        // 1・2番目のリスト
-        &:nth-of-type(2) .step-list__number,
-        &:nth-of-type(3) .step-list__number {
-          background: transparent;
-          border: 1px solid rgba($color: #000000, $alpha: 0.2);
-          color: rgba($color: #000000, $alpha: 0.2);
-        }
-
-        &:nth-of-type(2) .step-list__text,
-        &:nth-of-type(3) .step-list__text {
-          color: rgba($color: #000000, $alpha: 0.2);
-        }
-      }
-    }
-
-    // リード文
-    &Lead {
-      font-size: clamp(16px, 5vw, 20px);
-      font-weight: 500;
-      line-height: 1.5;
-      text-align: center;
-      margin-bottom: clamp(40px, 12.5vw, 64px);
     }
 
     // 入力エリア
@@ -131,17 +224,6 @@
       }
     }
   }
-
-  // ボタン
-  &__button {
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-
-    &Wrapper {
-      @include button__style--next;
-    }
-  }
 }
 
 // ============================
@@ -153,27 +235,6 @@
     &Area {
       &Wrapper {
         max-width: 1100px;
-      }
-
-      // ステップ
-      .step-list {
-        margin-bottom: clamp(32px, 3.5vw, 64px);
-        column-gap: clamp(24px, 7.5vw, 48px);
-
-        &__item {
-          row-gap: clamp(8px, 1vw, 16px);
-        }
-
-        &__number {
-          font-size: clamp(18px, 2vw, 24px);
-          width: clamp(48px, 5vw, 64px);
-          height: clamp(48px, 5vw, 64px);
-        }
-
-        &__text {
-          font-size: clamp(14px, 1.5vw, 18px);
-          font-weight: 500;
-        }
       }
 
       // リード文
@@ -219,6 +280,131 @@
         textarea {
           padding: clamp(8px, 1vw, 16px) clamp(14px, 4.375vw, 18px);
           width: 60%;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// 入力確認画面
+// ==========================================================================
+.contact-confirm {
+  &Wrapper {
+    @include wrapper;
+    margin: 0 auto clamp(80px, 25vw, 150px);
+
+    // ステップ
+    .step-list {
+      &__item {
+        // 1・3番目のリスト
+        &:nth-of-type(1) .step-list__number {
+          background: transparent;
+          border: 1px solid rgba($color: #000000, $alpha: 0.2);
+          color: rgba($color: #000000, $alpha: 0.2);
+        }
+
+        &:nth-of-type(1) .step-list__text {
+          color: rgba($color: #000000, $alpha: 0.2);
+        }
+
+        // 2番目のリスト
+        &:nth-of-type(2) .step-list__number {
+          background: $main-color;
+          border: 1px solid rgba($color: $main-color, $alpha: 1);
+          color: #fff;
+        }
+
+        &:nth-of-type(2) .step-list__text {
+          color: $main-color;
+        }
+      }
+    }
+
+    // 入力エリア
+    .confirm__list {
+      @include flex__column;
+      row-gap: clamp(40px, 12.5vw, 56px);
+      margin-bottom: clamp(48px, 15vw, 64px);
+      width: 100%;
+    }
+
+    .confirm__item {
+      @include flex__column;
+      row-gap: clamp(8px, 2.5vw, 16px);
+    }
+
+    .confirm__itemTitle {
+      font-size: clamp(16px, 5vw, 20px);
+      font-weight: 600;
+    }
+
+    .confirm__textArea {
+      @include description__style;
+      line-height: 1.5;
+    }
+  }
+}
+
+// ============================
+// 900px~ PC
+// ============================
+@include mq(l) {
+  .contact-confirm {
+    &Wrapper {
+      // 入力エリア
+      .confirm__list {
+        row-gap: clamp(32px, 3.5vw, 48px);
+        width: min(800px, 62%);
+        margin: 0 auto clamp(48px, 5vw, 80px);
+      }
+
+      .confirm__item {
+        row-gap: clamp(8px, 1vw, 16px);
+      }
+
+      .confirm__itemTitle {
+        font-size: clamp(16px, 1.8vw, 20px);
+      }
+
+      .confirm__textArea {
+        @include description__style;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// 送信完了画面
+// ==========================================================================
+.contact-thanks {
+  &Wrapper {
+    @include wrapper;
+    margin: 0 auto clamp(80px, 25vw, 150px);
+
+    // ステップ
+    .step-list {
+      &__item {
+        // 1・2番目のリスト
+        &:nth-of-type(1) .step-list__number {
+          background: transparent;
+          border: 1px solid rgba($color: #000000, $alpha: 0.2);
+          color: rgba($color: #000000, $alpha: 0.2);
+        }
+
+        &:nth-of-type(1) .step-list__text {
+          color: rgba($color: #000000, $alpha: 0.2);
+        }
+
+        // 2番目のリスト
+        &:nth-of-type(3) .step-list__number {
+          background: $main-color;
+          border: 1px solid rgba($color: $main-color, $alpha: 1);
+          color: #fff;
+        }
+
+        &:nth-of-type(3) .step-list__text {
+          color: $main-color;
         }
       }
     }
