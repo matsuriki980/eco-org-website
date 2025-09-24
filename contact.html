@@ -142,12 +142,12 @@
                 </p>
 
                 <!-- フォーム -->
-                <form action="">
+                <form action="" id="form">
 
                     <div class="contact-form__list">
                         <div class="contact-form__item">
                             <label for="username">氏名<span class="label">必須</span></label>
-                            <input type="text" id="username" name="username" placeholder="山田太郎" required>
+                            <input type="text" id="username" name="username" placeholder="山田太郎">
                         </div>
 
                         <div class="contact-form__item">
@@ -157,17 +157,17 @@
 
                         <div class="contact-form__item">
                             <label for="mail">メールアドレス<span class="label">必須</span></label>
-                            <input type="text" id="mail" name="mail" placeholder="matsuyamarikiya17@.com" required>
+                            <input type="text" id="mail" name="mail" placeholder="matsuyamarikiya17@.com">
                         </div>
 
                         <div class="contact-form__item">
                             <label for="contact">お問い合わせ内容<span class="label">必須</span></label>
-                            <textarea id="contact" name="contact" placeholder="山田太郎" rows="6" required></textarea>
+                            <textarea id="contact" name="contact" placeholder="山田太郎" rows="6"></textarea>
                         </div>
                     </div>
 
                     <!-- 送信ボタン -->
-                    <div class="contact-form__button">
+                    <div class="contact-form__button" id="form__button">
                         <button type="submit" class="contact-form__button--next">
                             入力内容を送信する
                         </button>
@@ -177,7 +177,7 @@
         </div>
 
         <!-- 入力確認画面-->
-        <div class="contact-confirm" id="step2">
+        <div class="contact-confirm" id="step2" hidden>
             <div class="contact-confirmWrapper">
 
                 <!-- ステップ -->
@@ -208,7 +208,7 @@
                 <dl class="confirm__list">
                     <div class="confirm__item">
                         <dt class="confirm__itemTitle">氏名</dt>
-                        <dd id="c_name" class="confirm__textArea">松山里貴</dd>
+                        <dd id="c_username" class="confirm__textArea">松山里貴</dd>
                     </div>
 
                     <div class="confirm__item">
@@ -223,7 +223,7 @@
 
                     <div class="confirm__item">
                         <dt class="confirm__itemTitle">お問い合わせ内容</dt>
-                        <dd id="c_contact-detail" class="confirm__textArea"></dd>
+                        <dd id="c_contact" class="confirm__textArea"></dd>
                     </div>
                 </dl>
 
@@ -231,14 +231,14 @@
 
 
                     <!-- 戻るボタン -->
-                    <div class="contact-form__button">
+                    <div class="contact-form__button" id="confirm__button--back">
                         <button type="submit" class="contact-form__button--back">
                             入力画面に戻る
                         </button>
                     </div>
 
                     <!-- 送信ボタン -->
-                    <div class="contact-form__button">
+                    <div class="contact-form__button" id="confirm__button--next">
                         <button type="submit" class="contact-form__button--next">
                             入力内容を送信する
                         </button>
@@ -251,7 +251,7 @@
 
 
         <!-- 送信完了画面 -->
-        <div class="contact-thanks" id="step3">
+        <div class="contact-thanks" id="step3" hidden>
             <div class="contact-thanksWrapper">
                 <!-- ステップ -->
                 <ol class="step-list">
@@ -278,7 +278,7 @@
                 </p>
 
                 <!-- 戻るボタン -->
-                <div class="contact-form__button">
+                <div class="contact-form__button" id="thanks__button">
                     <button type="submit" class="contact-form__button--back">
                         トップページに戻る
                     </button>
@@ -345,6 +345,9 @@
 
     <!-- js読み込み -->
     <script src="js/script.js"></script>
+
+    <!-- お問い合わせフォーム用 js -->
+     <script src="js/contact.js"></script>
 </body>
 
 </html>
